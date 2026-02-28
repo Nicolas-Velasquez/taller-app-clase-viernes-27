@@ -1,6 +1,6 @@
 import { useRouter} from "expo-router";
 import React, { useState } from "react";
-import { Button, Text, TextInput, View,Alert } from "react-native";
+import {StyleSheet, Button, Text, TextInput, View,Alert } from "react-native";
 
 
 const IndexScreen =()=> {
@@ -9,10 +9,11 @@ const IndexScreen =()=> {
     const[message, setMessage] = useState("");
     const router = useRouter();
 
-    return <View>
+    return <View style={estilos.container}>
     
 
     <TextInput    
+    style={estilos.input}
     placeholder="Ingrese Contraseña"
     value={textValue}
     onChangeText={setTextValue}
@@ -46,6 +47,22 @@ const IndexScreen =()=> {
     </View>    
 }
 
-
 export default IndexScreen;
 
+const estilos = StyleSheet.create({
+    container:{
+        flex:1,
+        padding: 16,
+        alignItems:'center',
+        justifyContent: 'center',
+        backgroundColor: '#f2f2f2'
+    },
+    input: {
+        paddingBlock: 16,
+        borderWidth:1,
+        borderColor:'#000000',
+        borderRadius:14,
+        padding:8,
+        height:36
+    }
+})
